@@ -1,6 +1,5 @@
-package Project1;
+package Project1.GroupSolution;
 
-import java.util.Random;
 import java.util.Scanner;
 
 public class RandomNum {
@@ -9,7 +8,7 @@ public class RandomNum {
     /*
     Given a positive integer number whose is name is max ,
 
-    create a random number between 0 to max (inclusive)
+    create a random number between 0 to max
 
     output should be int
 
@@ -21,6 +20,8 @@ public class RandomNum {
         int max = scanner.nextInt();
 
         //  code Start here don't change before this line
+
+        System.out.println((int)((Math.random() * max)));
 
 
     }

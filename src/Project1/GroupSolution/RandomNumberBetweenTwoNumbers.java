@@ -1,6 +1,5 @@
-package Project1;
+package Project1.GroupSolution;
 
-import java.util.Random;
 import java.util.Scanner;
 
 public class RandomNumberBetweenTwoNumbers {
@@ -8,12 +7,12 @@ public class RandomNumberBetweenTwoNumbers {
 
     /*
     Given two positive integer numbers
-    i.e.  "15 20"  or "7 235"
+    i.e. "15 20" or "7 235"
 
      integer 1 is min
      integer 2 is max
 
-    create a random number between min and max (inclusive)
+    create a random number between min and max
 
     output should be int
 
@@ -30,6 +29,10 @@ public class RandomNumberBetweenTwoNumbers {
         int max = Integer.parseInt(elements[1]);
 
         //  code Start here don't change before this line
+
+        int randomNum = (int) (Math.random() * max)-min;
+        // int result = (int) (Math.random() * (max-min) +min ); // another way
+        System.out.println(randomNum);
 
 
     }

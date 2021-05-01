@@ -9,7 +9,7 @@ public class FizzBuzz {
             -that prints "fizz" when given number is divisible by 5
             -that prints "buzz" when given number is divisible by 3
             -that prints "fizzbuzz" when given number is divisible by both 3 and 5
-            -that prints same number when it is not divisible by both 3 and 5
+            -that prints same number if it is not divisible by 3 or 5
 
         Examples:
             input1 -> 10 | output1 -> fizz
