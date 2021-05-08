@@ -24,19 +24,37 @@ public class ReverseArr {
 //        Your code starts here,ignore the above codes it is related to test class.
 //        Use myArray
 
+///////////// First way ///////////
 //        int counter = 0 ;
-        String[] reversedArray = new String[myArray.length];
+//        String[] reversedArray = new String[myArray.length];
 //        while (counter<myArray.length){
 //            reversedArray[counter] = myArray[(myArray.length-1)-counter];
 //            counter++;
 //        }
-int len =
-        for (int i = 0; i < myArray.length; i++) {
-            reversedArray[myArray.length-1-i] = myArray[i];
+//        System.out.println(Arrays.toString(reversedArray));
+
+
+////////// Second way //////////////
+//        String[] reversedArray = new String[myArray.length];
+//        for (int i = 0; i < myArray.length; i++) {
+//            reversedArray[myArray.length-1-i] = myArray[i];
+//        }
+//        System.out.println(Arrays.toString(reversedArray));
+
+/////////////// Third way ///////////////////
+//        String[] reversedArray = new String[myArray.length];
+//        for (int i = 0, j = myArray.length - 1; i < myArray.length; i++, j--) {
+//            reversedArray[j] = myArray[i];
+//        }
+//        System.out.println(Arrays.toString(reversedArray));
+
+/////////////// Fourth way ////////////////////////
+        int lastIndex = myArray.length - 1;
+        for (int i = 0; i < myArray.length/2; i++) {
+            String temp = myArray[i];
+            myArray[i] = myArray[lastIndex-i];
+            myArray[lastIndex-i] = temp;
         }
-
-
-        System.out.println(Arrays.toString(reversedArray));
-
+        System.out.println(Arrays.toString(myArray));
     }
 }

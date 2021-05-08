@@ -1,6 +1,7 @@
 package project2.groupSolution;
 
 import java.util.Arrays;
+import java.util.Scanner;
 
 public class Special2DArray {
 
@@ -16,16 +17,16 @@ public class Special2DArray {
      */
 
     public static void main(String[] args) {
-        int[][] int2dArray = new int[5][];
+        int[][] int2dArray = new int[5][];  // The 2D array has 5 element arrays
 
         for (int i = 0; i < int2dArray.length; i++) {
-            int2dArray[i] = new int[i];
+            int2dArray[i] = new int[i];  // Each element array length is equal its index in the 2D array
             for (int j = 0; j < i; j++) {
-                int2dArray[i][j] = i;
+                int2dArray[i][j] = i;  // Each element array contains int values of its index number
                 // Arrays.fill(int2dArray[i], i); Optional code
             }
         }
-        System.out.println(Arrays.deepToString(int2dArray));
+        System.out.println(Arrays.deepToString(int2dArray));  // Print the 2D array
 
     }
 }

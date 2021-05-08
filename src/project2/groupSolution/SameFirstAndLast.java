@@ -27,12 +27,8 @@ public class SameFirstAndLast {
 
         //      Your code starts here, ignore the above codes it is related to test class.
         //      Use myArray
-        boolean isSame = false;
 
-        if (myArray[0] == myArray[myArray.length - 1]) {
-            isSame = true;
-        }
-        System.out.println(isSame);
+        System.out.println(myArray[0] == myArray[myArray.length - 1]);
     }
 }
 
