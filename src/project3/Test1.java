@@ -1,5 +1,10 @@
 package project3;
 
+import org.junit.Assert;
+import org.junit.Test;
+
+import java.util.Arrays;
+
 public class Test1 {
 
 //    @Test
@@ -25,7 +30,14 @@ public class Test1 {
 //        String expected = "An Alien SPEAKS 435 _hello @!$%^";
 //        Assert.assertEquals(expected,actual);
 //    }
-
+//
+//    @Test
+//    public void camelCase4(){
+//        CamelCase c1 = new CamelCase();
+//        String actual = c1.camelCase("sleeplessness");
+//        String expected = "Sleeplessness";
+//        Assert.assertEquals(expected,actual);
+//    }
 
 
 //    @Test
@@ -44,7 +56,7 @@ public class Test1 {
 //        int num1 = 1;
 //        int num2 = 1;
 //        int actual = s1.sumOfSquaresOfGaussSums(num1, num2);
-//        int expected = 1;
+//        int expected = 2;
 //        Assert.assertEquals("The arguments are: " + num1 + " and " + num2, expected, actual);
 //    }
 //
@@ -201,7 +213,7 @@ public class Test1 {
 //        String message = "The array: " + Arrays.toString(arr) + "\n" +
 //                "Lower bound: " + lower + "\n" +
 //                "Upper bound: " + upper;
-//        Assert.assertEquals(message, expected, actual);
+//        Assert.assertEquals(message, Arrays.toString(expected), Arrays.toString(actual));
 //    }
 //
 //    @Test
@@ -215,7 +227,7 @@ public class Test1 {
 //        String message = "The array: " + Arrays.toString(arr) + "\n" +
 //                "Lower bound: " + lower + "\n" +
 //                "Upper bound: " + upper;
-//        Assert.assertEquals(message, expected, actual);
+//        Assert.assertEquals(message, Arrays.toString(expected), Arrays.toString(actual));
 //    }
 //
 //    @Test
@@ -229,7 +241,7 @@ public class Test1 {
 //        String message = "The array: " + Arrays.toString(arr) + "\n" +
 //                "Lower bound: " + lower + "\n" +
 //                "Upper bound: " + upper;
-//        Assert.assertEquals(message, expected, actual);
+//        Assert.assertEquals(message, Arrays.toString(expected), Arrays.toString(actual));
 //    }
 //
 //    @Test
@@ -243,7 +255,7 @@ public class Test1 {
 //        String message = "The array: " + Arrays.toString(arr) + "\n" +
 //                "Lower bound: " + lower + "\n" +
 //                "Upper bound: " + upper;
-//        Assert.assertEquals(message, expected, actual);
+//        Assert.assertEquals(message, Arrays.toString(expected), Arrays.toString(actual));
 //    }
 //
 //    @Test
@@ -257,7 +269,7 @@ public class Test1 {
 //        String message = "The array: " + Arrays.toString(arr) + "\n" +
 //                "Lower bound: " + lower + "\n" +
 //                "Upper bound: " + upper;
-//        Assert.assertEquals(message, expected, actual);
+//        Assert.assertEquals(message, Arrays.toString(expected), Arrays.toString(actual));
 //    }
 //
 //    @Test
@@ -271,7 +283,7 @@ public class Test1 {
 //        String message = "The array: " + Arrays.toString(arr) + "\n" +
 //                "Lower bound: " + lower + "\n" +
 //                "Upper bound: " + upper;
-//        Assert.assertEquals(message, expected, actual);
+//        Assert.assertEquals(message, Arrays.toString(expected), Arrays.toString(actual));
 //    }
 
 }

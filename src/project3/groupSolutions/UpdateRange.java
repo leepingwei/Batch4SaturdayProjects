@@ -1,4 +1,4 @@
-package  project3;
+package project3.groupSolutions;
 
 /*
 
@@ -22,5 +22,13 @@ package  project3;
  */
 
 public class UpdateRange {
+
+    public int[] updateRange(int[] arr, int lowerBound, int upperBound) {
+        for (int i = 0; i < arr.length; i++) {
+            if (arr[i] > lowerBound && arr[i] < upperBound)
+                arr[i] = -1;
+        }
+        return arr;
+    }
 
 }

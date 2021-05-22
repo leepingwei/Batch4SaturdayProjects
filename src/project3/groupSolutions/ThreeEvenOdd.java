@@ -1,4 +1,4 @@
-package  project3;
+package  project3.groupSolutions;
 
 /*
 
@@ -19,5 +19,17 @@ package  project3;
  */
 
 public class ThreeEvenOdd {
+
+    public boolean threeEvenOrOdd(int[] arr){
+
+        int counter1 = 0;    // better variable naming suggested
+        int counter2 = 0;
+        for (int i = 0; i < arr.length; i++) {
+            if (arr[i] % 2 == 0)
+                counter1++;
+            else
+                counter2++;
+        }return (counter1 >= 3 || counter2 >= 3);
+    }
 
 }
