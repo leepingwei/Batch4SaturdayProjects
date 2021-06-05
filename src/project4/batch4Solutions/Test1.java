@@ -1,4 +1,4 @@
-package project4.Batch3Solutions;
+package project4.batch4Solutions;
 
 import org.junit.Assert;
 import org.junit.Test;
@@ -15,6 +15,7 @@ public class Test1 {
         s1.add("17");
         s1.add("Java");
         s1.add("Collections");
+    
         int actual = tl.getTotalLength(s1);
         int expected = 20;
         Assert.assertEquals(expected, actual);
@@ -45,7 +46,7 @@ public class Test1 {
 
     @Test
     public void sortHashSet1() {
-        sortHashSet tl = new sortHashSet();
+        SortHashSet tl = new SortHashSet();
         HashSet<Integer> s1 = new HashSet<>();
         s1.add(1);
         s1.add(10);
@@ -65,7 +66,7 @@ public class Test1 {
 
     @Test
     public void sortHashSet2() {
-        sortHashSet tl = new sortHashSet();
+        SortHashSet tl = new SortHashSet();
         HashSet<Integer> s1 = new HashSet<>();
         s1.add(1);
         s1.add(10);

@@ -12,6 +12,6 @@ package project4;
         NOTE : DO NOT USE COLLECTIONS CLASS WHILE SOLVING THE QUESTION USE FOR LOOP OR DIFFERENT SET TYPES
      */
 
-public class sortHashSet {
+public class SortHashSet {
 
 }

@@ -15,6 +15,7 @@ public class Test1 {
 //        s1.add("17");
 //        s1.add("Java");
 //        s1.add("Collections");
+    
 //        int actual = tl.getTotalLength(s1);
 //        int expected = 20;
 //        Assert.assertEquals(expected, actual);
