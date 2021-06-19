@@ -1,6 +1,6 @@
-package project7.testClasses;
+package project7.groupSolution.testClasses;
 
-import project7.bankAccount.User;
+import project7.groupSolution.bankAccount.User;
 import org.junit.Assert;
 
 
@@ -9,12 +9,15 @@ public class TransferOwnAccount {
 
     public static void main(String[] args) {
 
-//        User u1 = new User("Steven" , "Gerard", "10/02/2000", "married" ,1000 , 2000);
-//        u1.transfer(u1,u1);
-//        System.out.println(u1);
-//        Assert.assertTrue("result should be 900 but your result is " +u1.amountAccount1 ,u1.amountAccount1==900);
-//        Assert.assertTrue("result should be 2099 but your result is " +u1.amountAccount2 , u1.amountAccount2==2099 );
+        User u1 = new User("Steven", "Gerard", "10/02/2000", "married", 1000, 2000);
+        u1.transfer(u1, u1);
+        System.out.println(u1);
+        Assert.assertTrue("result should be 900 but your result is " + u1.amountAccount1, u1.amountAccount1 == 900);
+        Assert.assertTrue("result should be 2099 but your result is " + u1.amountAccount2, u1.amountAccount2 == 2099);
 
+
+    }
+}
 
             /*
             Run this class and enter the below information on the console.
@@ -46,7 +49,10 @@ public class TransferOwnAccount {
         amount in account 2 : 2099
         relativeName: Relative should be more then 18 years old
         relativeAge: Relative should be more then 18 years old
-         */
+
     }
 
 }
+
+ */
+
