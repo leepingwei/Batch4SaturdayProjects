@@ -1,4 +1,4 @@
-package project8.Mortgage;
+package project8And9.Mortgage;
 
 public class HousePrices {
    /*

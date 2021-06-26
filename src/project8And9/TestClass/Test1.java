@@ -1,8 +1,5 @@
-package project8.TestClass;
+package project8And9.TestClass;
 
-import project8.Mortgage.HousePrices;
-import project8.Mortgage.StatesTax;
-import org.junit.Assert;
 import org.junit.Test;
 
 public class Test1 {
