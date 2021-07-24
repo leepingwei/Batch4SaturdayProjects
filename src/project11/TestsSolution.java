@@ -1,28 +1,20 @@
 package project11;
 
-/**
- * Use project10 solution library app and write automation test cases of the tests on Project 11 Test Cases excel file.
- */
-
+import project10.solution.Data;
+import project10.solution.LibraryApp;
+import project10.solution.Users.User;
 import org.junit.Assert;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.contrib.java.lang.system.TextFromStandardInputStream;
-import project10.solution.Books.Book;
-import project10.solution.Users.Student;
-import project10.solution.Users.Teacher;
-import project10.solution.Users.User;
-import project10.solution.Data;
-import project10.solution.LibraryApp;
 
 import java.time.LocalDate;
+
 
 public class TestsSolution {
 
     @Rule
     public final TextFromStandardInputStream systemInMock = TextFromStandardInputStream.emptyStandardInputStream();
-
-//////////////////////// Write your test scripts below this line ///////////////////////////////////////////////////////
 
     @Test
     public void test1() {
@@ -31,198 +23,222 @@ public class TestsSolution {
     }
 
     @Test
-    public void test2(){
+    public void test2() {
         systemInMock.provideLines("\n", "C");
         LibraryApp.main(null);
+        // This test is expected to fail!
     }
 
     @Test
     public void test3() {
-        systemInMock.provideLines("1000", "0");
+        String userID = "1000";
+        systemInMock.provideLines(userID, "0");
         LibraryApp.main(null);
-        User expected = Data.getUserMap().get(1000);
+
+        User expected = Data.getUserMap().get(Integer.valueOf(userID));
         User actual = LibraryApp.getActiveUser();
-        Assert.assertSame(expected, actual);
+        Assert.assertEquals(expected, actual);
     }
 
     @Test
     public void test4() {
-        systemInMock.provideLines("2001", "0");
+        String userID = "1000";
+        systemInMock.provideLines(userID, "0");
         LibraryApp.main(null);
-        User expected = Data.getUserMap().get(2001);
-        User actual = LibraryApp.getActiveUser();
-        Assert.assertSame(expected, actual);
+
+        String expected = Data.getUserMap().get(Integer.valueOf(userID)).getName();
+        String actual = LibraryApp.getActiveUser().getName();
+        Assert.assertEquals(expected, actual);
     }
 
     @Test
     public void test5() {
-        systemInMock.provideLines("3002", "0");
+        String userID = "3002";
+        systemInMock.provideLines(userID, "0");
         LibraryApp.main(null);
-        User expected = Data.getUserMap().get(3002);
-        User actual = LibraryApp.getActiveUser();
-        Assert.assertSame(expected, actual);
+
+        String expected = Data.getUserMap().get(Integer.valueOf(userID)).getLastName();
+        String actual = LibraryApp.getActiveUser().getLastName();
+        Assert.assertEquals(expected, actual);
     }
 
     @Test
     public void test6() {
-        systemInMock.provideLines("2002", "1", "10002", "0");
+        String userID = "2002";
+        String bookID = "10002";
+        systemInMock.provideLines(userID, "1", bookID, "0");
         LibraryApp.main(null);
-        Book expected = Data.getUserMap().get(2002).getBookList().get(10002);
-        Book actual = LibraryApp.getActiveUser().getBookList().get(10002);
-        Assert.assertSame(expected, actual);
+
+        User expected = Data.getUserMap().get(Integer.valueOf(userID));
+        User actual = Data.getBookMap().get(Integer.valueOf(bookID)).getBorrower();
+        Assert.assertEquals(expected, actual);
     }
 
     @Test
-    public void test7(){
-        systemInMock.provideLines("3000", "1", "20000", "0");
+    public void test7() {
+        String userID = "3000";
+        String bookID = "20000";
+        systemInMock.provideLines(userID, "1", bookID, "0");
         LibraryApp.main(null);
-        LocalDate expected = Data.getUserMap().get(3000).getBookList().get(20000).getDueDate();
-        LocalDate actual = LibraryApp.getActiveUser().getBookList().get(20000).getDueDate();
-        Assert.assertSame(expected, actual);
+
+        LocalDate expected = LocalDate.now().plusDays(14);
+        LocalDate actual = Data.getBookMap().get(Integer.valueOf(bookID)).getDueDate();
+        Assert.assertEquals(expected, actual);
     }
 
     @Test
-    public void test8(){
-        systemInMock.provideLines("2001", "1", "10000", "0");
+    public void test8() {
+        String userID = "2001";
+        String bookID = "10000";
+        systemInMock.provideLines(userID, "1", bookID, "0");
         LibraryApp.main(null);
-        LocalDate expected = Data.getUserMap().get(2001).getBookList().get(10000).getDueDate();
-        LocalDate actual = LibraryApp.getActiveUser().getBookList().get(10000).getDueDate();
-        Assert.assertSame(expected, actual);
+
+        LocalDate expected = LocalDate.now().plusDays(21);
+        LocalDate actual = Data.getBookMap().get(Integer.valueOf(bookID)).getDueDate();
+        Assert.assertEquals(expected, actual);
     }
 
     @Test
-    public void test9(){
-        systemInMock.provideLines("1001", "1", "10002", "0");
+    public void test9() {
+        String userID = "1001";
+        String bookID = "10002";
+        systemInMock.provideLines(userID, "1", bookID, "0");
         LibraryApp.main(null);
-        LocalDate expected = Data.getUserMap().get(1001).getBookList().get(10002).getDueDate();
-        LocalDate actual = LibraryApp.getActiveUser().getBookList().get(10002).getDueDate();
-        Assert.assertSame(expected, actual);
+
+        LocalDate expected = LocalDate.now().plusDays(30);
+        LocalDate actual = Data.getBookMap().get(Integer.valueOf(bookID)).getDueDate();
+        Assert.assertEquals(expected, actual);
     }
 
     @Test
     public void test10() {
-        systemInMock.provideLines("1001", "1", "90001", "0");
+        String userID = "1001";
+        String bookID = "90001";
+        systemInMock.provideLines(userID, "1", bookID, "0");
         LibraryApp.main(null);
-        Book expected = null;
-        Book actual = LibraryApp.getActiveUser().getBookList().get(90001);
-        Assert.assertSame(expected, actual);
+
+        User expected = null;
+        User actual = Data.getBookMap().get(Integer.valueOf(bookID)).getBorrower();
+        Assert.assertEquals(expected, actual);
     }
 
     @Test
-    // Suppose to be fail
     public void test11() {
-        systemInMock.provideLines("2000", "1", "abcde", "0");
+        String userID = "2000";
+        String bookID = "abcde";
+        systemInMock.provideLines(userID, "1", bookID, "0");
         LibraryApp.main(null);
-        Book expected = Data.getUserMap().get(2000).getBookList().get("abcde");
-        Book actual = LibraryApp.getActiveUser().getBookList().get("abcde");
-        Assert.assertSame(expected, actual);
+        // This test is expected to fail!
     }
 
     @Test
-    // Code not working, need instruction
-    public void test12(){
-        systemInMock.provideLines("2000", "1", "10000", "2", "10000", "0");
+    public void test12() {
+        String userID = "2000";
+        String bookID = "10000";
+        systemInMock.provideLines(userID, "1", bookID, "2", bookID, "0");
         LibraryApp.main(null);
-        boolean expected = false;
-        boolean actual = LibraryApp.getActiveUser().getBookList().get(10000).isCheckedOut();
-        Assert.assertSame(expected, actual);
+
+        Assert.assertFalse(Data.getBookMap().get(Integer.valueOf(bookID)).isCheckedOut());
     }
 
     @Test
-    // Code not working, need instruction
-    public void test13(){
-        systemInMock.provideLines("1001", "5", "10000", "2002", "2", "10000", "0");
+    public void test13() {
+        String userID = "1001";
+        String bookID = "10000";
+        String borrowerID = "2002";
+        systemInMock.provideLines(userID, "5", bookID, borrowerID, "2", bookID, "0");
         LibraryApp.main(null);
-        boolean expected = false;
-        boolean actual = LibraryApp.getActiveUser().getBookList().get(10000).isCheckedOut();
-        Assert.assertSame(expected, actual);
+
+        Assert.assertFalse(Data.getBookMap().get(Integer.valueOf(bookID)).isCheckedOut());
     }
 
     @Test
-    // Code not working, need instruction
-    public void test14(){
-        systemInMock.provideLines("1000", "5", "20000", "2001", "0");
+    public void test14() {
+        String userID = "1000";
+        String bookID = "20000";
+        String borrowerID = "2001";
+        systemInMock.provideLines(userID, "5", bookID, borrowerID, "0");
         LibraryApp.main(null);
-        User expected = Data.getUserMap().get(2001).getBookList().get(20000).getBorrower();
-        User actual = LibraryApp.getActiveUser().getBookList().get(20000).getBorrower();
-        Assert.assertSame(expected, actual);
+
+        User expected = Data.getUserMap().get(Integer.valueOf(borrowerID));
+        User actual = Data.getBookMap().get(Integer.valueOf(bookID)).getBorrower();
+        Assert.assertEquals(expected, actual);
     }
 
     @Test
-    public void test15(){
-        systemInMock.provideLines("1000", "5", "90000", "3002", "0");
+    public void test15() {
+        String userID = "1000";
+        String bookID = "90000";
+        String borrowerID = "3002";
+        systemInMock.provideLines(userID, "5", bookID, borrowerID, "0");
         LibraryApp.main(null);
-        Book expected = null;
-        Book actual = LibraryApp.getActiveUser().getBookList().get(90000);
-        Assert.assertSame(expected, actual);
+
+        User expected = null;
+        User actual = Data.getBookMap().get(Integer.valueOf(bookID)).getBorrower();
+        Assert.assertEquals(expected, actual);
     }
 
     @Test
-    public void test16(){
-        systemInMock.provideLines("1000", "3", "2", "John", "Smith", "2065", "0");
+    public void test16() {
+        String userID = "1000";
+        String newTeacherName = "John";
+        String newTeacherLastName = "Smith";
+        String newTeacherID = "2065";
+        systemInMock.provideLines(userID, "3", "2", newTeacherName, newTeacherLastName, newTeacherID, "0");
         LibraryApp.main(null);
-        boolean expected = true;
-        boolean actual = Data.getUserMap().containsKey(2065);
-        Assert.assertSame(expected, actual);
+
+        Assert.assertTrue(Data.getUserMap().containsKey(Integer.valueOf(newTeacherID)));
     }
 
     @Test
-    public void test17(){
-        systemInMock.provideLines("1000", "3", "3", "John", "Smith", "3065", "0");
+    public void test17() {
+        String userID = "1000";
+        String newStudentName = "John";
+        String newStudentLastName = "Smith";
+        String newStudentID = "3065";
+        systemInMock.provideLines(userID, "3", "3", newStudentName, newStudentLastName, newStudentID, "0");
         LibraryApp.main(null);
-        boolean expected = true;
-        boolean actual = Data.getUserMap().containsKey(3065);
-        Assert.assertSame(expected, actual);
+
+        Assert.assertTrue(Data.getUserMap().containsKey(Integer.valueOf(newStudentID)));
     }
 
     @Test
-    public void test18(){
-        systemInMock.provideLines("1000", "3", "1", "John", "Smith", "1066", "0");
+    public void test18() {
+        String userID = "1000";
+        String newLibrarianName = "John";
+        String newLibrarianLastName = "Smith";
+        String newLibrarianID = "1066";
+        systemInMock.provideLines(userID, "3", "1", newLibrarianName, newLibrarianLastName, newLibrarianID, "0");
         LibraryApp.main(null);
-        boolean expected = true;
-        boolean actual = Data.getUserMap().containsKey(1066);
-        Assert.assertSame(expected, actual);
+
+        Assert.assertTrue(Data.getUserMap().containsKey(Integer.valueOf(newLibrarianID)));
     }
 
     @Test
-    public void test19(){
-        systemInMock.provideLines("1000", "3", "3", "John", "Smith", "5065", "3165", "0");
+    public void test19() {
+        String userID = "1000";
+        String newStudentName = "John";
+        String newStudentLastName = "Smith";
+        String wrongStudentID = "5000";
+        String correctStudentID = "3165";
+        systemInMock.provideLines(userID, "3", "3", newStudentName, newStudentLastName, wrongStudentID, correctStudentID, "0");
         LibraryApp.main(null);
-        boolean expected = true;
-        boolean actual = Data.getUserMap().containsKey(3165);
-        Assert.assertSame(expected, actual);
+
+        Assert.assertFalse(Data.getUserMap().containsKey(Integer.valueOf(wrongStudentID)));
     }
 
     @Test
-    public void test20(){
-        systemInMock.provideLines("1000", "3", "2", "John", "Smith", "2165", "0");
+    public void test20() {
+        String userID = "1000";
+        String newTeacherName = "John";
+        String newTeacherLastName = "Smith";
+        String newTeacherID = "2165";
+        systemInMock.provideLines(userID, "3", "2", newTeacherName, newTeacherLastName, newTeacherID, "0");
         LibraryApp.main(null);
+
         int expected = 21;
-//        int actual = Don't know how to get the value of MAX_DAYS of the user;
-//        Assert.assertSame(expected, actual);
+        int actual = Data.getUserMap().get(Integer.valueOf(newTeacherID)).getMAX_DAYS();
+        Assert.assertEquals(expected, actual);
     }
 
-    @Test
-    public void test21(){
-        systemInMock.provideLines("1000", "4", "1", "11002", "Hello World", "Lee", "0");
-        LibraryApp.main(null);
-        boolean expected = true;
-        boolean actual = Data.getBookMap().containsKey(11002);
-        Assert.assertSame(expected, actual);
-    }
-
-    @Test
-    public void test22(){
-        systemInMock.provideLines("1000", "4", "9", "11109", "99001", "TestNG", "Lee", "0");
-        LibraryApp.main(null);
-        boolean expected = true;
-        boolean actual = Data.getBookMap().containsKey(99001);
-        Assert.assertSame(expected, actual);
-    }
-
-    @Test
-    public void test23(){
-        // Infinity loop, book creation cannot be false
-        // Or I didn't understand the requirement
-    }
 }

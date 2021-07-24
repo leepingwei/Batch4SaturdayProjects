@@ -24,6 +24,14 @@ public class User {
         this.MAX_DAYS = maxDays;
     }
 
+    public int getMAX_DAYS() {
+        return MAX_DAYS;
+    }
+
+    public int getBOOK_LIMIT() {
+        return BOOK_LIMIT;
+    }
+
     private void addToBookList(User user, Book book) {
         user.bookList.put(book.getBookId(), book);
         book.setCheckedOut(true);
