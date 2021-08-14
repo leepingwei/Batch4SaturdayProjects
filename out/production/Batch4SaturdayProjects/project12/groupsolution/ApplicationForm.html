@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <title>Application Form</title>
+</head>
+
+<body bgcolor="lightyellow">
+
+<center><img src="techno study logo.png" width="10%" alt="TechnoStudyLogo"></center>
+
+<center><h3 style="background-color: lightgreen; color:blue"><b>Application Form</b></h3></center>
+
+<hr size="3px" color="lightgreen">
+<hr size="2px" color="lightgreen" width="70%">
+<hr size="1px" color="lightgreen" width="40%">
+
+<form action="SubmissionConfirm.html" id="application_form">
+
+    <label class="tab">First Name:<input type="text" id="firstName" name="firstname"></label>&emsp; &emsp; &emsp;
+    <label>Last Name:<input type="text" id="lastName" name="lastname"></label><br>
+    <br><label>Address 1:<input type="text" id="address1" placeholder="Street name and number" name="address1"></label>&emsp; &emsp; &emsp;
+    <label>Address 2:<input type="text" id="address2" name="address2"></label><br>
+    <br><label>City:<input type="text" id="city"name city></label>&emsp; &emsp; &emsp;
+    <label>Zip Code:<input type="number" id="zipCode"></label>&emsp; &emsp; &emsp;
+    <label>State:<input type="text" id="state"></label><br>
+    <br><label>Date of Birth:<input type="date" id="dob"></label>&emsp; &emsp; &emsp;
+    <label>Phone:<input type="number" id="phoneNum"></label>&emsp; &emsp; &emsp;
+    <label>E-mail:<input type="text" id="email"></label><br>
+
+    <br><label>Gender:</label>&emsp; &emsp; &emsp;
+    <label>Male<input type="radio" name="gender" value="male"></label>&emsp;
+    <label>Female<input type="radio" name="gender" value="female"></label>&emsp;
+    <label>Prefer not to say<input type="radio" name="gender" value="male"></label><br>
+
+    <br><label>Briefly about yourself:</label><br>
+    <textarea cols="100" rows="10" maxlength="1000" placeholder="(Max 100 characters)"></textarea><br>
+
+    <br><label>Which branch do you apply for?</label><br>
+    <label>Please select only one state:</label>
+    <select name="state">
+        <option value="1">Georgia</option>
+        <option value="2">New Jersey</option>
+        <option value="3">New York</option>
+        <option value="4">Florida</option>
+        <option value="5">Virginia</option>
+        <option value="6">California</option>
+        <option value="7">Arizona</option>
+        <option value="8">Nevada</option>
+        <option value="9">Texas</option>
+        <option value="0">Ohio</option>
+    </select><br>
+
+    <br><label> <input type="checkbox" id="relocate"> I am willing to relocate. </label>
+    <br><label> <input type="checkbox" id="over18"> I am over 18 years old. </label>
+    <br><label> <input type="checkbox" id="authorization"> I have authorization for the US. </label>
+    <br><label> <input type="checkbox" id="veteran"> I am a protected veteran. </label>
+    <br><label> <input type="checkbox" id="disable"> I consider myself as a disabled person. </label><br>
+
+    <br><label> <input type="checkbox" id="acceptTerms"><b> I have read the terms and conditions of Techno Study and
+    accept them all. </b></label><br>
+
+    <br>
+    <center><a href="mailto:hr@techno.study"> E-mail us your resume and related documents.</a></center>
+
+    <div style="background-color: lightgreen">
+        <br>
+            <center>
+                <button type="submit" style="background-color:#63D125; height:20px; width:100px" form="application_form"><b>SUBMIT</b></button>
+            </center>
+        </a>
+        <br>
+    </div>
+</form>
+
+</body>
+</html>
