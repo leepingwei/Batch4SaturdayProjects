@@ -1,0 +1,12 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
+<suite name="Project15">
+    <test name="ContactUs">
+        <parameter name="browser" value="Chrome"></parameter>
+        <parameter name="browser" value="Chrome"></parameter>
+        <classes>
+            <class name="project15.solution.ContactUsFunctionality">
+            </class>
+        </classes>
+    </test>
+
+</suite>
