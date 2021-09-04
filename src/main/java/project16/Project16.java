@@ -37,21 +37,15 @@ public class Project16 {
         // Click on "+" button to add a school department AGAIN
 
         // On the pop-up window, type "High School" for the name of the department and "HS-1" for the code AGAIN
-
         // Click on "Save" for TRYING to create a school department WITH THE SAME NAME AND CODE.
-
         // Verify that a dialog box occurs with a message "There is already Department with "High School" name!".
 
         // On the pop-up window, type "High School" for the name of the department and "HSC-1" for the code AGAIN
-
         // Click on "Save" for TRYING to create a school department WITH THE SAME NAME BUT A DIFFERENT CODE.
-
         // Verify that a dialog box occurs with a message "There is already Department with "High School" name!".
 
         // On the pop-up window, type "High School Classes" for the name of the department and "HS-1" for the code AGAIN
-
         // Click on "Save" for TRYING to create a school department WITH A DIFFERENT NAME BUT THE SAME CODE.
-
         // Verify that a dialog box occurs with a message "There is already Department with "HS-1" code!".
 
         // Click on "x" to dismiss the pop-up window.
