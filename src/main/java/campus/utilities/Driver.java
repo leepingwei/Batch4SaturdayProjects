@@ -11,16 +11,16 @@ public class Driver {
     private static WebDriver driver;
 
     public static WebDriver getDriver(Browser browser) {
-        if (driver == null) {
-            if (browser == Browser.CHROME) {
+        switch (browser) {
+            case CHROME: {
                 WebDriverManager.chromedriver().setup();
                 driver = new ChromeDriver();
             }
-            if (browser == Browser.FIREFOX) {
+            case FIREFOX: {
                 WebDriverManager.firefoxdriver().setup();
                 driver = new FirefoxDriver();
             }
-            if(browser == Browser.EDGE){
+            case EDGE: {
                 WebDriverManager.edgedriver();
                 driver = new EdgeDriver();
             }
