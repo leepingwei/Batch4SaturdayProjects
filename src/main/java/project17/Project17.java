@@ -1,5 +1,14 @@
 package project17;
 
+import campus.utilities.Browser;
+import campus.utilities.Driver;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.interactions.Actions;
+import org.testng.annotations.Test;
+
+import java.awt.*;
+import java.awt.event.KeyEvent;
+
 public class Project17 {
 
 //  IMPORTANT NOTE: Do not forget to delete whatever you have created manually if needed in order to keep the data clean for other testers please.
@@ -37,6 +46,5 @@ public class Project17 {
 
 //  Close the browser
 
-//  Good luck!
-
+    //  Good luck!
 }

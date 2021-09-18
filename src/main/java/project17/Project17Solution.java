@@ -1,6 +1,5 @@
 package project17;
 
-import campus.pages.Base;
 import campus.pages.Helper;
 import campus.pages.LoginPage;
 import org.junit.BeforeClass;

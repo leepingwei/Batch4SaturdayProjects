@@ -11,18 +11,20 @@ public class Driver {
     private static WebDriver driver;
 
     public static WebDriver getDriver(Browser browser) {
-        switch (browser) {
-            case CHROME: {
-                WebDriverManager.chromedriver().setup();
-                driver = new ChromeDriver();
-            }
-            case FIREFOX: {
-                WebDriverManager.firefoxdriver().setup();
-                driver = new FirefoxDriver();
-            }
-            case EDGE: {
-                WebDriverManager.edgedriver();
-                driver = new EdgeDriver();
+        if (driver == null) {
+            switch (browser) {
+                case CHROME: {
+                    WebDriverManager.chromedriver().setup();
+                    driver = new ChromeDriver();
+                }
+                case FIREFOX: {
+                    WebDriverManager.firefoxdriver().setup();
+                    driver = new FirefoxDriver();
+                }
+                case EDGE: {
+                    WebDriverManager.edgedriver();
+                    driver = new EdgeDriver();
+                }
             }
         }
         return driver;
